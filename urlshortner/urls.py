@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import home
+from .views import home, redirectUrl
 
 appname = "urlshortner"
 
 urlpatterns = [
-    path("", home, name = "home")
+    path("", home, name="home"),
+    path("<str:shortUrl>", redirectUrl, name="redirect")
 ]

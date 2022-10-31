@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contactFrom.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <title>Contact Form </title>
-</head>
-<body>
-    <h1> Connect With Me </h1> 
-    <form class="Contact">
-        <p>
-            Name: <input type="text" placeholder="Your Name">
-         </p>
-         <p>
-            E-mail<input type="email" placeholder="Your E-mail address"> 
-         </p> 
-         <p>
-             Context<input type="text" placeholder="Write Frew Lines Why Nou Need Me">
-         </p>
-         <p>
-            Worked Earlier: <input type="checkbox">
-         <p>
-            Compony<input type="text" placeholder="xyz pvt.ltd">
-         </p>
-         <p>
-            Phone  <input type="number" placeholder="700010070">
-         </p>
-         <input type="Button" value="SUBMIT"><input type="Button" value="RESET"> 
-    </form>   
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=h1, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" type="text/css" media="screen" />
+    <title>SHORTNER</title>
+  </head>
+  <body>
+    <form id="main-form" action="" method="post">
+      {% csrf_token %}
+      <div>{{form.long_url}}</div>
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+      {% if redirect_url %}
+      <h2 id="times-followd">{{ times_followed }}</h2>
+      <h2 id="redirect-url">{{ redirect_url }}</h2>
+      <h2 id="long-url">{{ long_url }}</h2>
+      {% endif %}
+    </div>
+    <h1></h1>
+  </body>
 </html>
