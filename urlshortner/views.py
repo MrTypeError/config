@@ -12,7 +12,8 @@ def home(request):
     context["form"] = ShortnerFrom()
 
     if request.method == "GET":
-        context["times_followed"] = Shortner.times_followed
+        myObj = Shortner()
+        context["times_followed"] = myObj.times_followed
         return render(request, tmplt, context)
 
     elif request.method == "POST":
